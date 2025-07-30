@@ -1,45 +1,388 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <title>Index</title>
-    </head>
-    <body>
-        <header>Hein Linn Htet ဟိဏ်းလင်းထက် : ကျေးဇူးပြုပြီး အေ ပေးပါဆရာ</header>
-        <nav class="nav">
-            <a class="box" href="index.html">
-                <img class="icon-img" src="images/indexIcon.png" alt="Home" title="Home" />
-                Home
-            </a>
-            <a class="box" href="education.html">
-                <img class="icon-img" src="images/educationIcon-removebg-preview.png" alt="Education" title="Education" />
-                Education
-            </a>
-            <a class="box" href="hobbies.html">
-                <img class="icon-img" src="images/football_Icon.png" alt="Hobbies" title="Hobbies" />
-                Hobbies
-            </a>
-            <a class="box" href="aboutme.html">
-                <img class="icon-img" src="images/aboutmeIcon.png" alt="About Me" title="About Me" />
-                About me
-            </a>
-        </nav>
-
-        <div class="indexmaincontent">
-            <section class="indextext">
-                <p>Hello! My name is Hein!</p>
-                <p>I'm a year 2 student from Nanyang Polytechnic, studying Game Development and Technology.</p>
-                <p>Welcome to my portfolio!</p>
-                <p>Email: 243962J@mymail.nyp.edu.sg</p>
-                <p>Phone: +65 3191 2917 / +959 799 218 300</p>
-                <p>Fluent Languages: Burmese, English, C++, C#, Python</p>
-            </section>
-            <section class="indexportrait">
-                <img class="portrait" src="images/face.jpg" alt="portrait" title="portrait" />
-            </section>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="style.css" text="text/css" rel="stylesheet">
+    <script src="main.js" defer></script>
+</head>
+<body>
+    <header>
+        <div class="flag-background">
+            <img class = "titleflag" src="Image/burmeseflag.png" alt="Burmese Flag" class="Burmese Flag"/>
+            <div class="titleheading">Burmese Culture</div>
         </div>
-        <footer class="indexfooter">Hein Linn Htet 243962J</footer>
-    </body>
+
+        <nav>
+        <ul>
+            <li><div class="navtext" id="page1btn">Language</div></li>
+            <li><div class="navtext" id="page2btn">Mythology</div></li>
+            <li>
+                <img id="pagembtn" class="navicon" src="Image/peacockIcon.png" alt="Peacock" title="Peacock">
+            </li>
+            <li><div class="navtext" id="page3btn">History</div></li>
+            <li><div class="navtext" id="page4btn">Food</div></li>
+        </ul>
+        </nav>
+    </header>
+
+    <main id="pagecontainer">
+        <section class="page" id="page5">
+            <div class="mainptext">
+                Burmese culture is with rich history and significance, existing for hundreds and thousands of year, the culture is heavily influenced by Buddhism since the start of the Burmese civilization. The dominant culture of the country Myanmar, a country in South East Asia.
+            </div>
+            <div>
+                <img class="siteqr" src="Image/siteqr.png" alt="QR Code" title="QR Code">
+            </div>
+        </section>
+        <section class="page" id="page1">
+            <article class="alphabetarticle">
+                <div class="languageintro">
+                    The Burmese language is the official language of the country of Myanmar. The language is part of the Tibeto-Burman branch of the Sino-Tibetan language family. Burmese is a tonal language, meaning that the meaning of a word can change based on the pitch or tone used when speaking it.
+                    The writing system is heavily inspired from old pyu and old mon scripts, the languages are Indosphere influence which also makes the Burmese script an Indosphere influenced script.
+                </div>
+                <div class="alphabetimg">
+                
+                </div>
+            </article>
+            <article class="diacritic article">
+
+            </article>
+
+        </section>
+
+        <!----------------------------------------------------------------------------------- Card ------------------------------------------------------------------------------------>
+        <section class="page" id="page2">
+            <section class="cardlisttitle">
+                Match the Cards to Win!
+            </section>
+            <section class="cardtimer">
+                Time : <div id="timerDisplay">0s</div>
+            </section>
+            <section class="cardgamebutton" id="cardbutton">
+                Start
+            </section>
+            <section class="cardlist">
+ 
+                <div class="card-state card-chintae">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/chintae.png" alt="Chintae" title="Chintae" />
+                            </div>
+                            <div class="cardname">
+                                <h2>ChinTae</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A mythical lion creature, mostly portrayed as the guardians of Buddha. Usually displayed in entrance of temples, pagodas and monasteries in pairs of two.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-nagar">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/nagar.png" alt="Nagar" title="Nagar" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Nagar</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Burmese version of a dragon. These creatures are portrayed as guardians of temples and shrines. They are powerful beings with the ability to swim through the earth like water and fly in the sky. In some stories, their angry gaze can turn enemies to ash.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-belu">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/belu.png" alt="Belu" title="Belu" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Belu</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Man-eating demons or ogres capable of shapeshifting. Ranging from the size of a human to giants. Belu with straight fangs are the evil ones that eat humans. Belu with curved or hooked fangs eat flowers and fruits and are not evil.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-zawgyi">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/zawgyi.png" alt="Zawgyi" title="Zawgyi" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Zawgyi</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A semi-immortal human alchemist and mystic with supernatural powers and often seen with a magic stick and a red hat. Zawgyi have supernatural powers such as flying through the air, travelling beneath the earth and oceans, as well as performing divination, necromancy and resurrection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-galone">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/galone.png" alt="Galone" title="Galone" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Galone</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A mythical bird, known for being large and powerful being with golden wings. Nemesis of the Nagars.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-pyinsarupa">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/pyinsarupa.png" alt="Pyinsa Rupa" title="Pyinsa Rupa" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Pyinsa Rupa</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Made of parts of an elephant, horse, white carp, bull, tonaya (a mythical horned leodragon). Commonly featured in traditional Burmese hsaing waing orchestras.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="card-state card-chintae">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/chintae.png" alt="Chintae" title="Chintae" />
+                            </div>
+                            <div class="cardname">
+                                <h2>ChinTae</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A mythical lion creature, mostly portrayed as the guardians of Buddha. Usually displayed in entrance of temples, pagodas and monasteries in pairs of two.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-nagar">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/nagar.png" alt="Nagar" title="Nagar" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Nagar</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Burmese version of a dragon. These creatures are portrayed as guardians of temples and shrines. They are powerful beings with the ability to swim through the earth like water and fly in the sky. In some stories, their angry gaze can turn enemies to ash.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-belu">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/belu.png" alt="Belu" title="Belu" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Belu</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Man-eating demons or ogres capable of shapeshifting. Ranging from the size of a human to giants. Belu with straight fangs are the evil ones that eat humans. Belu with curved or hooked fangs eat flowers and fruits and are not evil.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-zawgyi">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/zawgyi.png" alt="Zawgyi" title="Zawgyi" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Zawgyi</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A semi-immortal human alchemist and mystic with supernatural powers and often seen with a magic stick and a red hat. Zawgyi have supernatural powers such as flying through the air, travelling beneath the earth and oceans, as well as performing divination, necromancy and resurrection.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-galone">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/galone.png" alt="Galone" title="Galone" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Galone</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    A mythical bird, known for being large and powerful being with golden wings. Nemesis of the Nagars.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card-state card-pyinsarupa">
+                    <div class="cardface cardfacefront">
+                        <img class="cardcover" src="Image/cardcover.png" alt="Card" title="Card" />
+                    </div>
+                    <div class="cardface cardfaceback">
+                        <div class="cardcontent">
+                            <div class="cardimg">
+                                <img class="cardimage" src="Image/pyinsarupa.png" alt="Pyinsa Rupa" title="Pyinsa Rupa" />
+                            </div>
+                            <div class="cardname">
+                                <h2>Pyinsa Rupa</h2>
+                            </div>
+                            <div class="cardtext">
+                                <p>
+                                    Made of parts of an elephant, horse, white carp, bull, tonaya (a mythical horned leodragon). Commonly featured in traditional Burmese hsaing waing orchestras.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </section>
+    <!----------------------------------------------------------------------------------- Card ------------------------------------------------------------------------------------>
+        <section class="page" id="page3">
+            <div class="roadmap">
+
+            </div>
+        </section>
+        <section class="page" id="page4">
+            <div class="foodtext">
+                <p>
+                    Burmese food is influenced from both China and the Indian subcontinent, you will see most dishes that area similar to both regions. Burmese food also have similarities with bother South East Asian foods, since recipes are interchanging between different regions and countries. Burmese food also had influence over Thai and Lao food during the times of Burmese conquest to those regions.
+                    Most Burmese foods are based on salty and spicy taste, though it varies based on the region. In the southern parts of Myanmar you will find mostly spicy food and a lot of seafood, in the north the food is generally milder than the south.
+                </p>
+            </div>
+            <div class="foodgenerator">
+                <article class="foodsetting">
+                    <section class="fstext">
+                        <p>Enter Your Spice Level</p>
+                    </section>
+                    <section class="fsbar">
+                        <input type="range" id="myRange" min="0" max="100" value="50">
+                    </section>
+                    <section class="fsbutton">
+                        <button class="foodgenerate">Find Food</button>
+                    </section>
+                </article>
+                <article class="fooddetails kyayoh">
+                    <section class="fdtitle">
+                        
+                    </section>
+                    <section class="fddisc">
+                        
+                    </section>
+                    <section class="fdimg">
+                        
+                    </section>
+                </article>
+
+                <article class="fooddetails monthee">
+                    <section class="fdtitle">
+                        
+                    </section>
+                    <section class="fddisc">
+                        
+                    </section>
+                    <section class="fdimg">
+                        
+                    </section>
+                </article>
+
+                <article class="fooddetails monhinga">
+                    <section class="fdtitle">
+                        
+                    </section>
+                    <section class="fddisc">
+                        
+                    </section>
+                    <section class="fdimg">
+                        
+                    </section>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer>Hein Linn Htet 243962J</footer>
+</body>
 </html>
