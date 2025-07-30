@@ -151,6 +151,7 @@ function startGame()
 
   cards.forEach((card) => {
     card.classList.remove("is-flipped");
+    card.classList.remove("matched");
   });
 }
 
@@ -181,22 +182,20 @@ function shuffleCards()
 
 /**************************card**************************/
 
-
-
-
   const range = document.getElementById("myRange");
 
-  function getEmojiDataURL(emoji) {
-    const canvas = document.createElement("canvas");
-    canvas.width = 32;
-    canvas.height = 32;
-    const ctx = canvas.getContext("2d");
-    ctx.font = "28px serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    ctx.fillText(emoji, 16, 16);
-    return canvas.toDataURL();
-  }
+function getEmojiDataURL(emoji) {
+  const canvas = document.createElement("canvas");
+  canvas.width = 32;
+  canvas.height = 32;
+  const ctx = canvas.getContext("2d");
+  ctx.clearRect(0, 0, 32, 32);
+  ctx.font = "28px serif";
+  ctx.textAlign = "center";
+  ctx.textBaseline = "middle";
+  ctx.fillText(emoji, 16, 16);
+  return canvas.toDataURL();
+}
 
   function updateThumb(value) {
     let emoji = "😛";
@@ -221,6 +220,46 @@ function shuffleCards()
     document.head.appendChild(styleEl);
   }
 
-  // Initial setup
-  updateThumb(range.value);
-  range.addEventListener("input", (e) => updateThumb(e.target.value));
+updateThumb(range.value);
+range.addEventListener("input", (e) => updateThumb(e.target.value));
+
+const foodb = document.querySelector("#foodbutton");
+var allfood =document.querySelectorAll(".fooddetails");
+
+foodb.addEventListener("click", function ()
+{
+showfood();
+});
+
+function showfood()
+{
+  hideallfood();
+
+  const value = parseInt(range.value);
+  let pageId = "";
+
+  if (value <= 33)
+  {
+    pageId = "kyayoh";
+  } else if (value <= 66)
+  {
+    pageId = "mohinga";
+  } else
+  {
+    pageId = "montdi";
+  }
+
+  const onefood = document.getElementById(pageId);
+  if (onefood)
+  {
+    onefood.style.display = "grid";
+  }
+}
+
+function hideallfood()
+{
+  for(let onefood of allfood)
+  {
+    onefood.style.display="none";
+  }
+}
