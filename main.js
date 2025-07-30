@@ -56,8 +56,15 @@ let gameInPlay = false;
 let timer = 0;
 let timerInterval = null;
 
+let gameStarted = false;
+
 cardstart.addEventListener("click", function () {
-startGame()
+  startGame()
+  document.getElementById("cardbutton").textContent = "Restart";
+  setTimeout(function ()
+  {
+    shuffleCards()
+  }, 1000);
 });
 
 cards.forEach((card) => {
@@ -101,6 +108,54 @@ function checkMatch()
   }
 }
 window.addEventListener("DOMContentLoaded", () => {
+    cards.forEach((card) => {
+    card.classList.add("is-flipped");
+  });
+  shuffleCards();
+});
+
+function checkWin()
+{
+  if (pairdone >= 6)
+    {
+    gameInPlay = false;
+    stopTimer();
+    setTimeout(function ()
+    {
+      alert("You finished the game in " + timer + " seconds!!!");
+    }, 1000);
+  }
+}
+
+function startTimer()
+{
+  clearInterval(timerInterval);
+  timer = 0;
+  timerInterval = setInterval(() => {
+    timer++;
+    document.getElementById("timerDisplay").textContent = timer + "s";
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+}
+
+function startGame()
+{
+  gameInPlay = true;
+  flippedCards = [];
+  lockBoard = false;
+  pairdone = 0;
+  startTimer();
+
+  cards.forEach((card) => {
+    card.classList.remove("is-flipped");
+  });
+}
+
+function shuffleCards()
+{
   const cards = document.querySelectorAll(".card-state");
 
   const maxColumns = 6;
@@ -122,37 +177,6 @@ window.addEventListener("DOMContentLoaded", () => {
     card.style.gridRow = row;
     card.style.gridColumn = col;
   });
-});
-
-function checkWin()
-{
-  if (pairdone >= 6)
-    {
-    gameInPlay = false;
-    stopTimer();
-    setTimeout(function ()
-    {
-      alert("You finished the game in " + timer + " seconds!!!");
-    }, 1000);
-  }
-}
-
-function startTimer() {
-  timer = 0;
-  timerInterval = setInterval(() => {
-    timer++;
-    document.getElementById("timerDisplay").textContent = timer + "s";
-  }, 1000);
-}
-
-function stopTimer() {
-  clearInterval(timerInterval);
-}
-
-function startGame()
-{
-  gameInPlay = true;
-  startTimer();
 }
 
 /**************************card**************************/
