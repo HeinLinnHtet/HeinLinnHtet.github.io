@@ -353,6 +353,7 @@ footer
   color: #c9dbc5;
   background-color: #297245;
   outline : none;
+  height : 2vw;
 
   transition: 0.5s;
 }
@@ -430,7 +431,7 @@ input[type=range]
 {
   width: 30vw;
   height: 1vw;
-  border-radius: 1vw;
+  border-radius: 10%;
   background: linear-gradient(to right, #297245 0%, #70582f 50%, #661414 100%);
   outline: none;
   -webkit-appearance: none;
@@ -442,10 +443,110 @@ input[type=range]::-webkit-slider-thumb
   background: #a2a2a2;
   border: 0.1vw solid #70582f;
   border-radius: 100%;
-  font-size: 1vw;
   cursor: pointer;
   width: 1vw;
   height: 1vw;
+}
+
+@media (max-width: 1000px)
+{
+  .foodtext
+  {
+    width : 70vw;
+    font-size: 3vw;
+    transform : translate(12.5vw, 0);
+  }
+  input[type=range]
+  {
+    width: 50vw;
+    height: 3vw;
+    border-radius: 10%;
+  }
+  input[type=range]::-webkit-slider-thumb
+  {
+    border: 0.2vw;
+    border-radius: 100%;
+    cursor: pointer;
+    width: 3vw;
+    height: 3vw;
+  }
+  .foodgenerate
+  {
+    width : 20vw;
+    height : 5vw;
+    font-size: 3vw;
+  }
+  .fddisc
+  {
+    grid-row : 2;
+    grid-column: 1;
+    font-size: 2vw;
+    padding : 0vw;
+  }
+}
+@media (max-width: 800px)
+{
+  .foodtext
+  {
+    width : 90vw;
+    font-size: 4vw;
+    transform : translate(0);
+  }
+  .foodsetting
+  {
+    grid-template-rows: 1fr 1fr 1fr;
+  }
+  .fstext
+  {
+    font-size: 5vw;
+  }
+  .foodgenerator
+  {
+    display : grid;
+    grid-template-rows: 1fr 4fr;
+  } 
+  input[type=range]
+  {
+    width: 80vw;
+    height: 4vw;
+    border-radius: 10%;
+  }
+
+  .foodgenerate
+  {
+    width : 40vw;
+    height : 10vw;
+    font-size: 5vw;
+  }
+
+  .fooddetails
+  {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.5fr 1.5fr 1fr;
+    width : 90vw;
+    transform: translateX(0);
+  }
+
+  .fdtitle
+  {
+    grid-row : 1;
+    grid-column: 1;
+    padding : 0vw;
+    font-size: 10vw;
+  }
+  .fddisc
+  {
+    grid-row : 2;
+    grid-column: 1;
+    font-size: 5vw;
+    padding : 0vw;
+  }
+  .fdimgcon
+  {
+    grid-row : 3;
+    grid-column: 1;
+  }
 }
 /**************************Food**************************/
 
@@ -1225,4 +1326,3 @@ input[type="radio"]:checked + .quizflag
   background-color: #297245;
   color:#c9dbc5;
 }
-

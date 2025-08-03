@@ -64,7 +64,8 @@ const cardstart = document.querySelector("#cardbutton");
 let gameInPlay = false;
 let timer = 0;
 let timerInterval = null;
-let gameStarted = false;
+let maxColumns = 0;
+let maxRows = 0;
 
 cardstart.addEventListener("click", function ()
 {
@@ -118,11 +119,20 @@ function checkMatch()
     1000);
   }
 }
-window.addEventListener("DOMContentLoaded", () => {
+function presentcard()
+{
+  if (window.innerWidth < 1000)
+  {
+    maxColumns = 3;
+    maxRows = 4;
+  }
+  else
+  {
+    maxColumns = 6;
+    maxRows = 2
+  }
+
   const cards = document.querySelectorAll(".card-state");
-
-  const maxColumns = 6;
-
   for (let i = 0; i < cards.length; i++)
   {
     const row = Math.floor(i / maxColumns) + 1;
@@ -131,9 +141,10 @@ window.addEventListener("DOMContentLoaded", () => {
     cards[i].style.gridRow = row;
     cards[i].style.gridColumn = col;
 
-    cards[i].classList.add("is-flipped");
+    if(gameInPlay == false)
+      cards[i].classList.add("is-flipped");
   }
-});
+};
 
 function checkWin()
 {
@@ -183,26 +194,30 @@ function shuffleCards()
 {
   const cards = document.querySelectorAll(".card-state");
 
-  const maxColumns = 6;
-  const maxRows = 2;
-  const usedPositions = new Set();
+  let usedPositions = new Set();
 
   cards.forEach(function(card)
-{
-  let row, col, key ="";
+  {
+    let row, col, key ="";
 
-  do {
-    col = Math.floor(Math.random() * maxColumns) + 1;
-    row = Math.floor(Math.random() * maxRows) + 1;
-    key = row + "-" + col;
-  } while (usedPositions.has(key));
+    do
+    {
+      col = Math.floor(Math.random() * maxColumns) + 1;
+      row = Math.floor(Math.random() * maxRows) + 1;
+      key = row + "-" + col;
+    }
+    while (usedPositions.has(key));
 
-  usedPositions.add(key);
+    usedPositions.add(key);
 
-  card.style.gridRow = row;
-  card.style.gridColumn = col;
-});
+    card.style.gridRow = row;
+    card.style.gridColumn = col;
+  });
 }
+
+
+window.addEventListener("DOMContentLoaded", presentcard);
+window.addEventListener("resize", presentcard);
 
 /**************************card**************************/
 /**************************food**************************/
@@ -332,13 +347,13 @@ function checkword()
 {
   wordrounds++;
   if(
-    (chosendia1 == reqsym && chosendia2 != reqsym && chosendia3 != reqsym) ||
-    (chosendia1 != reqsym && chosendia2 == reqsym && chosendia3 != reqsym) ||
-    (chosendia1 != reqsym && chosendia2 != reqsym && chosendia3 == reqsym)
+    (chosendia1 == reqsym && chosendia2 == "" && chosendia3 == "") ||
+    (chosendia1 == "" && chosendia2 == reqsym && chosendia3 == "") ||
+    (chosendia1 == "" && chosendia2 == "" && chosendia3 == reqsym)
   )
-    {
-      wordpoint++;
-    }
+  {
+    wordpoint++;
+  }
 
   diaset1 = "";
   diaset2 = "";
