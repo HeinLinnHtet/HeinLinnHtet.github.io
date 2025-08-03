@@ -6,8 +6,6 @@ const page4btn=document.querySelector("#page4btn");
 const pagembtn = document.querySelector("#pagembtn");
 var allpages=document.querySelectorAll(".page");
 
-const foodbtn = document.querySelector("#genfood");
-
 //select all subtopic pages
 function hideall(){ //function to hide all pages
 for(let onepage of allpages){ //go through all subtopic pages
@@ -23,18 +21,15 @@ function show(pgno) {
   let onepage = document.querySelector("#page" + pgno);
   onepage.style.display = "block";
 
-  // clear previous nav highlights
-  document.querySelectorAll(".navtext").forEach(btn => {
+  document.querySelectorAll(".navtext").forEach(function(btn)
+  {
     btn.classList.remove("on-display");
   });
 
-  // highlight current nav
   const activeBtn = document.querySelector("#page" + pgno + "btn");
   if (activeBtn) activeBtn.classList.add("on-display");
 }
 
-/*Listen for clicks on the buttons, assign anonymous
-eventhandler functions to call show function*/
 page1btn.addEventListener("click", function () {
 show(1);
 });
@@ -62,7 +57,7 @@ menuItemsList.classList.toggle("menuShow");
 
 if(menuItemsList.classList.contains("menuShow"))
 {
-hamBtn.innerHTML="&#9776"; //change button text to chose menu
+hamBtn.innerHTML="&#9776";
 }
 else
 {
@@ -86,11 +81,11 @@ let maxRows = 0;
 
 cardstart.addEventListener("click", function ()
 {
-  startGame()
+  startGame();
   document.getElementById("cardbutton").textContent = "Restart";
   setTimeout(function ()
   {
-    shuffleCards()
+    shuffleCards();
   }, 1000);
 });
 
@@ -146,7 +141,7 @@ function presentcard()
   else
   {
     maxColumns = 6;
-    maxRows = 2
+    maxRows = 2;
   }
 
   const cards = document.querySelectorAll(".card-state");
@@ -161,7 +156,7 @@ function presentcard()
     if(gameInPlay == false)
       cards[i].classList.add("is-flipped");
   }
-};
+}
 
 function checkWin()
 {
@@ -335,7 +330,7 @@ buttonArray.forEach(function(btn)
     btn.style.display = "inline-block";
     btn.style.marginRight = "1vw";
   });
-};
+}
 
 
 window.addEventListener("DOMContentLoaded", function()
@@ -445,18 +440,18 @@ function randomDiacritic()
 
   if (randomNum == 1)
   {
-    reqtext = diacriticNames[diaset1.id]
-    reqsym = diacriticSymbols[diaset1.id]
+    reqtext = diacriticNames[diaset1.id];
+    reqsym = diacriticSymbols[diaset1.id];
   }
   if (randomNum == 2)
   {
-    reqtext = diacriticNames[diaset2.id]
-    reqsym = diacriticSymbols[diaset2.id]
+    reqtext = diacriticNames[diaset2.id];
+    reqsym = diacriticSymbols[diaset2.id];
   }
   if (randomNum == 3)
   {
-    reqtext = diacriticNames[diaset3.id]
-    reqsym = diacriticSymbols[diaset3.id]
+    reqtext = diacriticNames[diaset3.id];
+    reqsym = diacriticSymbols[diaset3.id];
   }
 
   document.getElementById("wordrequirment").textContent = reqtext;
@@ -673,13 +668,6 @@ changedynasty();
 const btnSubmit=document.querySelector("#btnSubmit");  
 const scorebox=document.querySelector("#scorebox");
 var q1,q2,q3,q4,q5,q6,score,round=0;
-
-const leaderque1=document.querySelector("#question1");
-const leaderque2=document.querySelector("#question2");
-const leaderque3=document.querySelector("#question3");
-const leaderque4=document.querySelector("#question4");
-const leaderque5=document.querySelector("#question5");
-const leaderque6=document.querySelector("#question6");
 var questionpage = document.querySelectorAll(".leadergame");
 var loadingpage = document.querySelector(".nogamescreen");
 
