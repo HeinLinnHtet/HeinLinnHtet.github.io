@@ -66,7 +66,8 @@ let timer = 0;
 let timerInterval = null;
 let gameStarted = false;
 
-cardstart.addEventListener("click", function () {
+cardstart.addEventListener("click", function ()
+{
   startGame()
   document.getElementById("cardbutton").textContent = "Restart";
   setTimeout(function ()
@@ -75,8 +76,9 @@ cardstart.addEventListener("click", function () {
   }, 1000);
 });
 
-cards.forEach((card) => {
-  card.addEventListener("click", function ()
+cards.forEach(function(card)
+{
+  card.addEventListener("click", function()
   {
     if (lockBoard || card.classList.contains("matched") || flippedCards.includes(card) || !gameInPlay) return;
 
@@ -150,7 +152,8 @@ function startTimer()
 {
   clearInterval(timerInterval);
   timer = 0;
-  timerInterval = setInterval(() => {
+  timerInterval = setInterval(function()
+  {
     timer++;
     document.getElementById("timerDisplay").textContent = timer + "s";
   }, 1000);
@@ -169,7 +172,8 @@ function startGame()
   pairdone = 0;
   startTimer();
 
-  cards.forEach((card) => {
+  cards.forEach(function(card)
+  {
     card.classList.remove("is-flipped");
     card.classList.remove("matched");
   });
@@ -183,66 +187,26 @@ function shuffleCards()
   const maxRows = 2;
   const usedPositions = new Set();
 
-  cards.forEach((card) => {
-    let row, col, key;
+  cards.forEach(function(card)
+{
+  let row, col, key ="";
 
-    do 
-    {
-      col = Math.floor(Math.random() * maxColumns) + 1;
-      row = Math.floor(Math.random() * maxRows) + 1;
-      key = `${row}-${col}`;
-    } while (usedPositions.has(key));
+  do {
+    col = Math.floor(Math.random() * maxColumns) + 1;
+    row = Math.floor(Math.random() * maxRows) + 1;
+    key = row + "-" + col;
+  } while (usedPositions.has(key));
 
-    usedPositions.add(key);
+  usedPositions.add(key);
 
-    card.style.gridRow = row;
-    card.style.gridColumn = col;
-  });
+  card.style.gridRow = row;
+  card.style.gridColumn = col;
+});
 }
 
 /**************************card**************************/
 /**************************food**************************/
-  const range = document.getElementById("myRange");
-
-function getEmojiDataURL(emoji) {
-  const canvas = document.createElement("canvas");
-  canvas.width = 32;
-  canvas.height = 32;
-  const ctx = canvas.getContext("2d");
-  ctx.clearRect(0, 0, 32, 32);
-  ctx.font = "28px serif";
-  ctx.textAlign = "center";
-  ctx.textBaseline = "middle";
-  ctx.fillText(emoji, 16, 16);
-  return canvas.toDataURL();
-}
-
-  function updateThumb(value) {
-    let emoji = "😛";
-    if (value <= 33) emoji = "😊";
-    else if (value <= 66) emoji = "😛";
-    else emoji = "🥵";
-
-    const dataURL = getEmojiDataURL(emoji);
-
-    range.style.setProperty("--thumb-image", `url(${dataURL})`);
-
-    const styleEl = document.getElementById("dynamic-style") || document.createElement("style");
-    styleEl.id = "dynamic-style";
-    styleEl.innerHTML = `
-      input[type=range]::-webkit-slider-thumb {
-        background-image: url(${dataURL});
-      }
-      input[type=range]::-moz-range-thumb {
-        background-image: url(${dataURL});
-      }
-    `;
-    document.head.appendChild(styleEl);
-  }
-
-updateThumb(range.value);
-range.addEventListener("input", (e) => updateThumb(e.target.value));
-
+const range = document.getElementById("spicyrange");
 const foodb = document.querySelector("#foodbutton");
 var allfood =document.querySelectorAll(".fooddetails");
 
@@ -329,21 +293,23 @@ function shufflediscritics()
   diaset2 = group2[Math.floor(Math.random() * group2.length)];
   diaset3 = group3[Math.floor(Math.random() * group3.length)];
 
-  buttonArray.forEach(btn => {
-    btn.style.display = "none";
-  });
+buttonArray.forEach(function(btn)
+{
+  btn.style.display = "none";
+});
 
-  [diaset1, diaset2, diaset3].forEach(btn => {
+[diaset1, diaset2, diaset3].forEach(function(btn)
+  {
     btn.style.display = "inline-block";
     btn.style.marginRight = "1vw";
   });
 };
 
 
-window.addEventListener("DOMContentLoaded", () => {
+window.addEventListener("DOMContentLoaded", function()
+{
   wordmaingame.style.display = "none";
 });
-
 wordstartbutton.addEventListener("click", function ()
 {
   startwordgame();
@@ -559,7 +525,8 @@ for (var i = 0; i < buttonIds.length; i++)
     var button = document.querySelector("#" + buttonIds[index]);
     var audio = new Audio(audioFiles[index]);
 
-    button.addEventListener("click", function () {
+    button.addEventListener("click", function ()
+    {
       audio.currentTime = 0;
       audio.play();
     });
@@ -716,6 +683,7 @@ function showque(queno)
     let onepage = document.querySelector("#question" + queno);
     onepage.style.display = "grid";
     loadingpage.style.display = "none";
+    document.getElementById("btnSubmit").textContent = "Submit";
   }
 }
 
@@ -795,7 +763,8 @@ function replayquiz()
   showque(1);
 
   const allRadios = document.querySelectorAll("input[type='radio']");
-  allRadios.forEach((radio) => {
+  allRadios.forEach(function(radio)
+  {
     radio.checked = false;
   });
 
