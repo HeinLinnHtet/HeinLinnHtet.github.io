@@ -182,7 +182,7 @@ footer
   nav ul{display:none;}
   .navtext
   {
-    width : 10vw;
+    width : 15vw;
     height : 5vw;
     margin : 1vw;
     border-bottom: 1vw solid #c9dbc5;
@@ -1211,7 +1211,7 @@ input[type=range]::-webkit-slider-thumb
 .flagcard img
 {
   max-width: 90%;
-  max-height: 90%;
+  max-height: auto;
   object-fit: contain;
 }
 
@@ -1652,9 +1652,178 @@ input[type="radio"]:checked + .quizflag
 
 @media (max-width: 1000px)
 {
-  
+  .flagcard
+  {
+    width: 50vw;
+    height: 20vw;
+  }
+  .dynastytitle
+  {
+    font-size: 4vw;
+  }
 }
 @media (max-width: 800px)
 {
-  
+  .flagcard
+  {
+    width: 50vw;
+    height: 13vw;
+  }
+
+  .dynastycontainer
+  {
+    width : 90vw;
+    transform : translateX(2.5vw);
+  }
+
+  .dynastyname
+  {
+    text-align: center;
+    padding : 1vw;
+    color:#661414;
+    font-size: 7vw;
+    font-weight: bold;
+  }
+
+  .dynastycontext
+  {
+    display : grid;
+    text-align: center;
+    padding : 1vw;
+    align-items: center;
+
+    color:#661414;
+    font-size: 4vw;
+
+    border-bottom : 0.5vw solid #661414;
+  }
+
+  .dynastymap
+  {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    border-bottom : 0.5vw solid #661414;
+  }
+
+  .mapportrait
+  {
+    height : 30vw;
+  }
+
+  .dynastyleaders
+  {
+    display : grid;
+    grid-template-columns: 3(1fr);
+  }
+
+  .leader1, .leader2, .leader3
+  {
+    width: 30vw;
+    display : grid;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .leader1
+  {
+    grid-column: 1;
+  }
+  .leader2
+  {
+    grid-column: 2;
+  }
+  .leader3
+  {
+    grid-column: 3;
+  }
+
+  .leaderprotrait
+  {
+    width : 20vw;
+    height : 30vw;
+  }
+
+  .leadercontext
+  {
+    position: absolute;
+    width : 20vw;
+    height : 30vw;
+
+    transform : translateX(25%);
+    font-size: 3vw;
+  }
+
+  .leadergametitle
+  {
+    font-size: 6vw;
+    margin : 2vw;
+  }
+  .leaderguess
+  {
+    width : 90vw;
+    transform : translateX(2.5vw);
+    grid-template-rows: 2fr 6fr 2fr 2fr;
+  }
+  .leadergame
+  {
+    width : 80vw;
+    border : 0.5vw solid #661414;
+    margin-top : 1vw;
+  }
+
+  .gleader
+  {
+    font-size: 5vw;
+  }
+
+  .gbagan, .gtaungu, .ginnwa, .gkonbaung
+  {
+    width : 30vw;
+    height : 20vw;
+
+    display : flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .quizflag
+  {
+    width : 30vw;
+    height : 15vw;
+  }
+
+  input[type="radio"]
+  {
+    display: none;
+  }
+
+  input[type="radio"]:checked + .quizflag
+  {
+    border: 0.1vw solid #297245;
+    width : 35vw;
+    height : 17vw;
+  }
+
+  #btnSubmit
+  {
+    font-size: 4vw;
+  }
+
+  #scorebox
+  {
+    font-size: 4vw;
+  }
+
+  .nogamescreen
+  {
+    width : 80vw;
+    border : 0.5vw solid #661414;
+    margin-top : 1vw;
+  }
+
+  .dynastytitle
+  {
+    font-size: 6vw;
+  }
 }
