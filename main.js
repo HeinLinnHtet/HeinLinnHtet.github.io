@@ -53,6 +53,23 @@ show(5);
 
 show(5);
 
+const hamBtn=document.querySelector("#hamIcon");
+const menuItemsList=document.querySelector("nav ul");
+hamBtn.addEventListener("click",toggleMenus);
+function toggleMenus()
+{
+menuItemsList.classList.toggle("menuShow");
+
+if(menuItemsList.classList.contains("menuShow"))
+{
+hamBtn.innerHTML="&#9776"; //change button text to chose menu
+}
+else
+{
+hamBtn.innerHTML="&#9776";
+}
+}
+
 
 /**************************card**************************/
 

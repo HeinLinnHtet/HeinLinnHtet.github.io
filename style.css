@@ -2,17 +2,15 @@
 {
   width:99%;height:auto;
 }
-/*border:1px solid rgb(36, 49, 105)
-.page{background:rgb(54, 124, 165)}*/
 
 body
 {
-    background-color: #ffc099;
+  background-color: #ffc099;
 
-    background-size: cover;
-    background-repeat: repeat;
-    background-position: center center;
-    height: 100vh;
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center center;
+  height: 100vh;
 }
 .titleheading
 {
@@ -58,15 +56,16 @@ body
 }
 
 
-.navtext.on-display::after {
+.navtext.on-display::after
+{
   content: '';
   position: absolute;
   height: 0.2vw;
   background-color: #297245;
   border-radius: 20%;
-  animation: sizechg 1s linear infinite alternate;
+  animation: sizechg 0.5s linear infinite alternate;
   z-index: 0;
-  transform: translateY(0.5vw);
+  transform: translateY(1vw);
 }
 
 @keyframes sizechg
@@ -90,10 +89,10 @@ body
 nav
 {
   transform: translateY(-100%);
-    display: flex;   
-    align-items: center;
-    justify-content: center;
-    background-color: #661414;
+  display: flex;   
+  align-items: center;
+  justify-content: center;
+  background-color: #661414;
 }
 
 nav ul
@@ -110,22 +109,19 @@ nav ul li
   border-radius: 10%;
 }
 
-nav ul li.active
-{
-  background-color: #297245;
-}
-
 .mainptext
 {
   width : 50vw;
   height : auto;
   text-align: center;
   font-size: 2vw;
-  transform : translateX(25vw)
+  transform : translateX(25vw);
+  color :#661414
 }
 
 .siteqr
 {
+  display:block;
   width : 10vw;
   height : auto;
   transform : translateX(45vw)
@@ -135,6 +131,109 @@ footer
 {
   background-color: #297245;
   text-align: center;
+}
+
+/*CSS for responsive menu*/
+#hamIcon{display:none;}
+
+/*to unhide menu items*/
+.menuShow{display:block;}
+
+@media (max-width: 1000px)
+{
+  .page
+  {
+    transform: translateY(-5vw);
+  }
+  .mainptext
+  {
+    width : 80vw;
+    font-size: 4vw;
+    transform : translateX(10vw);
+  }
+
+  .siteqr
+  {
+    display : block;
+    width : 20vw;
+    height : auto;
+    transform : translateX(40vw)
+  }
+  .page
+  {
+    margin-top : 2vw;
+  }
+}
+@media (max-width: 800px)
+{
+  /*make a menu items vertical*/
+  nav ul li
+  {
+    display:block;
+  }
+  /* unhide menu icon */
+  #hamIcon
+  {
+    display:block;
+    background-color: #661414;
+    border : 0vw;
+  }
+  /*hide the menu item list*/
+  nav ul{display:none;}
+  .navtext
+  {
+    width : 10vw;
+    height : 5vw;
+    margin : 1vw;
+    border-bottom: 1vw solid #c9dbc5;
+  }
+  .navicon
+  {
+    width: 10vw;
+    height: auto;
+  }
+  .siteqr
+  {
+    display:none;
+  }
+
+  .flag-background
+  {
+    position: relative;
+  }
+
+  .titleflag
+  {
+    width : 100%;
+    height : 50vw;
+  }
+
+  .titleheading
+  {
+    transform: translateY(-20vw);
+    background: #661414;
+    border-radius: 10%;
+    opacity: 75%;
+    font-size: 6vw;
+  }
+  nav
+  {
+    transform: translateY(-10vw);
+    display: flex;   
+    align-items: center;
+    justify-content: center;
+    background-color: #661414;
+  }
+  .page
+  {
+    transform: translateY(-10vw);
+  }
+  .mainptext
+  {
+    width : 80vw;
+    font-size: 4vw;
+    transform : translateX(10vw);
+  }
 }
 
 /**************************Mythology**************************/
@@ -193,13 +292,13 @@ footer
   gap: 20px;
   width: 40vw;
 
-  transform: translateX(10vw);
+  transform: translateX(12vw);
 }
 
 .card-state
 {
   width: 12vw;
-  height: 18vw;
+  height: 20vw;
   transition: transform 1s;
   transform-style: preserve-3d;
   cursor: pointer;
@@ -242,14 +341,13 @@ footer
   width: 100%;
   height: 100%;
 
-  
   display : grid;
-  grid-template-rows: 3fr 1fr 3fr;
+  grid-template-rows: 1fr 1fr 4fr;
 }
 
 .cardimg
 {
-  grid-row: 1;
+  grid-row: 2;
   display: flex;
   justify-content: center;
 }
@@ -270,7 +368,7 @@ footer
 
 .cardname
 {
-  grid-row: 2;
+  grid-row: 1;
   color: #661414;
   font-size: 1vw;
   text-align: center;
@@ -279,8 +377,13 @@ footer
 .cardtext
 {
   grid-row: 3;
-  font-size:0.6vw;
+  font-size:1vw;
   text-align: center;
+
+  color :#c9dbc5;
+  display:flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cardcover
@@ -295,17 +398,96 @@ footer
   height : 6vw;
 }
 
+@media (max-width: 1000px)
+{
+  .cardname
+  {
+    font-size: 2.5vw;
+  }
+  .card-state
+  {
+    width: 24vw;
+    height: 40vw;
+  }
+  .cardlist
+  {
+    gap: 20px;
+    width: 80vw;
+    transform: translateX(10vw);
+  }
+  .cardtext
+  {
+    font-size:2vw;
+  }
+  .cardimage
+  {
+    width : auto;
+    height : 10vw;
+  }
+
+  .cardlisttitle
+  {
+    width : 60vw;
+    font-size: 4vw;
+    transform : translate(20vw, -2vw);
+    padding : 1vw;
+  }
+
+  .cardtimer
+  {
+    width : 20vw;
+    font-size: 3vw;
+    transform : translate(40vw, -2vw);
+    margin-top : 1vw;
+  }
+
+  .cardgamebutton
+  {
+    width : 10vw;
+    font-size: 3vw;
+    transform : translate(45vw, -2vw);
+    margin-top : 1vw;
+  }
+}
+@media (max-width: 800px)
+{
+  .cardlisttitle
+  {
+    margin-top : 5vw;
+    width : 60vw;
+    font-size: 4vw;
+    transform : translate(20vw, -2vw);
+    padding : 1vw;
+  }
+
+  .cardtimer
+  {
+    width : 20vw;
+    font-size: 3vw;
+    transform : translate(40vw, -2vw);
+    margin-top : 1vw;
+  }
+
+  .cardgamebutton
+  {
+    width : 10vw;
+    font-size: 3vw;
+    transform : translate(45vw, -2vw);
+    margin-top : 1vw;
+  }
+}
+
 /**************************Mythology**************************/
 
 
 /**************************Food**************************/
 .foodtext
 {
-  width : 50vw;
+  width : 70vw;
   height : auto;
   text-align: center;
   font-size: 2vw;
-  transform : translate(24vw, -2vw);
+  transform : translate(15vw, -2vw);
   padding : 1vw;
   color: #661414;
   border-width : 0.2vw;
@@ -771,6 +953,13 @@ input[type=range]::-webkit-slider-thumb
   justify-content: center;
   background-color: #661414;
   color : #c9dbc5;
+
+  transition: 0.5s;
+}
+
+.wordgamestart:hover
+{
+  background-color: #297245;
 }
 
 .wordgamemain
@@ -792,6 +981,7 @@ input[type=range]::-webkit-slider-thumb
   display : flex;
   justify-content: center;
   align-items: center;
+  color:#661414;
 }
 
 #wordrequirment
@@ -851,6 +1041,140 @@ input[type=range]::-webkit-slider-thumb
   text-align: center;
   background-color: #661414;
   color : #c9dbc5;
+
+  transition: 0.5s;
+}
+.submitbutton:hover
+{
+  transform : translateY(-0.5vw);
+}
+
+@media (max-width: 1000px)
+{
+
+}
+@media (max-width: 800px)
+{
+  .alphabetarticle
+  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr;
+    width : 90vw;
+    transform : translateX(2.5vw);
+  }
+  .languageintro
+  {
+    grid-row: 1;
+
+    color : #661414;
+    font-size: 3vw;
+    padding : 1vw;
+    text-align: center;
+  }
+  .alphabetimg
+  {
+    grid-column: 1;
+    grid-row: 2;
+
+    padding : 1vw;
+  }
+  .alphabetimage
+  {
+    width : 60vw;
+  }
+
+  .diacriticarticle
+  {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 3fr 2fr 2fr 2fr;
+
+    width : 90vw;
+    transform: translateX(2.5vw);
+  }
+
+  .discritictitle
+  {
+    grid-column: 1;
+    grid-row: 1;
+    font-size : 5vw;
+  }
+  #discritic-1
+  {
+    grid-column: 1;
+    grid-row: 2;
+    font-size : 3vw;
+  }
+  #discritic-2
+  {
+    grid-column: 1;
+    grid-row: 3;
+    font-size : 3vw;
+  }
+  #discritic-3
+  {
+    grid-column: 1;
+    grid-row: 4;
+    font-size : 3vw;
+  }
+  #discritic-4
+  {
+    grid-column: 1;
+    grid-row: 5;
+    font-size : 3vw;
+  }
+
+  .wordgamestart
+  {
+    width : 50vw;
+    height : 5vw;
+    transform : translateX(22.5vw);
+    font-size : 3vw;
+
+    align-items: center;
+  }
+
+  .wordgamemain
+  {
+    width : 90vw;
+    transform : translateX(2.5vw);
+    border : 0.5vw solid #661414;
+    font-size : 2vw;
+    margin-top : 1vw;
+    margin-bottom : 1vw;
+
+    display : grid;
+    grid-template-rows: 1fr 1fr 2fr 2fr 1fr;
+  }
+
+  .wordinstructions
+  {
+    font-size: 3vw;
+  }
+
+  #wordrequirment
+  {
+    font-size: 3vw;
+  }
+
+  .mainword
+  {
+    font-size: 6vw;
+  }
+
+  .diabutton
+  {
+    background-color: #297245;
+    color : #c9dbc5;
+    border-radius: 1vw;
+    text-align: center;
+    font-size: 5vw;
+    padding : 1vw;
+
+    width: 10vw;
+    height: 10vw;
+
+    transform: translateX(25vw);
+  }
 }
 /**************************Language**************************/
 
@@ -869,7 +1193,7 @@ input[type=range]::-webkit-slider-thumb
   justify-content: center;
   gap: 2em;
   margin-top: 2em;
-  perspective: 1000px;
+  perspective: 100vw;
 }
 
 .flagcard
@@ -895,8 +1219,7 @@ input[type=range]::-webkit-slider-thumb
 {
   width: 300px;
   height: 180px;
-  transform: scale(1.1) rotateY(0deg);
-
+  
   transition: 1s;
 }
 
@@ -1325,4 +1648,13 @@ input[type="radio"]:checked + .quizflag
   border-radius: 1vw;
   background-color: #297245;
   color:#c9dbc5;
+}
+
+@media (max-width: 1000px)
+{
+  
+}
+@media (max-width: 800px)
+{
+  
 }
