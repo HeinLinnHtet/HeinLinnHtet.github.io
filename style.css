@@ -182,8 +182,8 @@ footer
   nav ul{display:none;}
   .navtext
   {
-    width : 15vw;
-    height : 5vw;
+    width : 20vw;
+    height : 10vw;
     margin : 1vw;
     border-bottom: 1vw solid #c9dbc5;
   }
@@ -231,8 +231,16 @@ footer
   .mainptext
   {
     width : 80vw;
-    font-size: 4vw;
+    font-size: 8vw;
     transform : translateX(10vw);
+  }
+  .navtext.on-display
+  {
+    border-top: 1vw solid #c9dbc5;
+  }
+  .navtext.on-display::after
+  {
+    animation : 0s;
   }
 }
 
@@ -470,10 +478,14 @@ footer
 
   .cardgamebutton
   {
-    width : 10vw;
-    font-size: 3vw;
-    transform : translate(45vw, -2vw);
+    width : 20vw;
+    font-size: 6vw;
+    transform : translate(40vw, -2vw);
     margin-top : 1vw;
+  }
+  .cardtext
+  {
+    font-size:1.75vw;
   }
 }
 
@@ -1044,7 +1056,12 @@ input[type=range]::-webkit-slider-thumb
 
 @media (max-width: 1000px)
 {
-
+  .submitbutton
+  {
+    width : 20vw;
+    border : 0.5vw solid #661414;
+    font-size : 3vw;
+  }
 }
 @media (max-width: 800px)
 {
